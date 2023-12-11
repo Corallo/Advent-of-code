@@ -15,7 +15,7 @@ data = [list(line) for line  in data]
 print(data)
 original_data = data
 data = np.array(original_data)
-n = 5
+n = 2
 data_points = []
 
 for expansion in range(n):
