@@ -10,7 +10,12 @@ puzzle = Puzzle(year=YEAR, day=DAY)
 
 data = puzzle.input_data
 
-#data = puzzle.examples[0][0]
+"""
+This script helped me to visualize the problem,
+so that I could identify more easily that the target node "rx" was depending from bm, cl, dr and tn.
+Once that was clear, I could run the part_2.py script, to find when those 4 nodes are triggered, and then use the
+lcm of those 4 numbers to find the answer.
+"""
 
 print(data)
 
@@ -57,36 +62,13 @@ for name, part in schematics.items():
     for output in part["outputs"]:
         G.add_edge(name, output)
 
-#distances = nx.single_source_shortest_path_length(G, 'broadcaster')
-"""
-y_positions = {}
-
-# Set the x-axis position based on the distances and y-axis position incrementally
-pos = {}
-for node in G.nodes():
-    x_value = distances[node]
-    if x_value not in y_positions:
-        y_positions[x_value] = 0  # Initialize y-axis position
-    y_value = y_positions[x_value]
-    pos[node] = (x_value, y_value)
-    y_positions[x_value] += 1  # Increment y-axis position for the next node with the same x-axis value
-"""
 #initial position for each node at 0,0
 
 pos = {}
 for node in G.nodes():
     pos[node] = (0,0)
 
-"""set manually these positions
-boradcaster -5,0
-qs -0 -5
-bx -0 -3
-pz -0 +3
-lp -0 +5
-
-rx 8,0
-vr 7,0"""
-
+"""set manually important nodes to visualize them more clearly"""
 pos["broadcaster"] = (-5,0)
 pos["qs"] = (0,-5)
 pos["bx"] = (0,-3)
@@ -114,8 +96,5 @@ print(distances)
 # Draw the graph
 nx.draw(G, pos, with_labels=True, font_weight='bold', node_size=2000, node_color="lightblue", font_color="black", font_size=10, arrowsize=20)
 
-
-# Draw the graph
-#nx.draw(G,  with_labels=True, node_size=700, node_color='skyblue', font_size=10, font_color='black', font_weight='bold', arrowsize=15)
 
 plt.show()

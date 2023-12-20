@@ -8,6 +8,12 @@ puzzle = Puzzle(year=YEAR, day=DAY)
 
 data = puzzle.input_data
 
+"""
+This solution is partially hardcoded based on the visualization of the schematics got on the part2_visualizer2.py script.
+With that script I found that the node "rx" depend on the nodes "bm", "cl", "dr" and "tn".
+So I could just calculate the lcm of the number of pushes needed to trigger those 4 nodes.
+"""
+
 #data = puzzle.examples[0][0]
 
 print(data)
