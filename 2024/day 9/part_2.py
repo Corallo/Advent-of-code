@@ -53,7 +53,6 @@ print(new_data)
 new_data = [int(d) if d != "." else -1 for d in new_data]
 
 free_space = {}
-# map free space
 for i in range(len(new_data)):
     if new_data[i] == -1:
         for j in range(i+1,len(new_data)):
@@ -76,11 +75,7 @@ while True:
         continue
     new_data[free_start:free_start + lenght] = new_data[start:end]
     new_data[start:end] =  [-1]*lenght
-    #print(new_data)
-
     i = start - 1
-
-
 
 
 print(new_data[:100])

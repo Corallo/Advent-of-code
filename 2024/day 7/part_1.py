@@ -31,8 +31,6 @@ answer =  0
 for line in data:
     if verify_line(line):
         answer += line[0]
-        with open("my_result.txt", "a") as f:
-            f.write(f"{line[0]}: {line[1:]}\n")
 
 
 print(answer)

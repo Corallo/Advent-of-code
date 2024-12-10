@@ -25,10 +25,8 @@ def generate_string(compact_data):
     return result_string
 
 
-
 new_data=generate_string(data)
 print(new_data)
-# convert into intos
 new_data = [int(d) if d != "." else -1 for d in new_data]
 last_j= 0
 for i in tqdm(range(len(new_data) - 1, -1, -1)):
