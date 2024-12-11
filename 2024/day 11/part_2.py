@@ -22,19 +22,6 @@ print(data)
 
 iter = 75
 
-#data = {k: data.count(k) for k in data}
-print(data)
-
-def process_stone(stone):
-    l = len(str(stone))
-    if stone == 0:
-        stone = 1
-    elif l % 2 == 0:
-        stone = [int(str(stone)[:l//2]), int(str(stone)[l//2:])]
-    else:
-        stone *= 2024
-    return stone
-
 @lru_cache(maxsize=None)
 def process_stones_n_time(stone, n):
     if n == 0:
