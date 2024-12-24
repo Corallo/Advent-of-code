@@ -1,7 +1,8 @@
 Session
 *bad.py
-data.txt
-data*.txt
+*.txt
 things to improve
 test*
 *.mp4
+2024/day 14/part_2_1.py
+2024/day 14/part_2_2.py
